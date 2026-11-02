@@ -33,6 +33,20 @@ export default function CheckoutPage() {
   const [deliveryType, setDeliveryType] = useState<"delivery" | "pickup">("delivery");
   const [paymentMethod, setPaymentMethod] = useState<"razorpay" | "cod">("razorpay");
   const [isProcessing, setIsProcessing] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <div className="py-24 max-w-md mx-auto px-4 text-center">
+        <div className="w-8 h-8 border-2 border-[#E77A42] border-t-transparent rounded-full animate-spin mx-auto mb-3" />
+        <p className="text-xs text-neutral-500 font-medium">Preparing checkout...</p>
+      </div>
+    );
+  }
 
   if (cart.length === 0) {
     return (

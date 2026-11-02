@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/image";
+import React, { useState, useEffect } from "react";
 import NextLink from "next/link";
 import Image from "next/image";
 import { useCart } from "@/lib/cart-context";
@@ -41,6 +40,11 @@ export default function CartPage() {
     success: boolean;
     message: string;
   } | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleApplyCoupon = (e: React.FormEvent) => {
     e.preventDefault();
@@ -76,6 +80,15 @@ export default function CartPage() {
   const freeShippingThreshold = 799;
   const progressPercent = Math.min(100, Math.round((subtotal / freeShippingThreshold) * 100));
   const amountRemaining = Math.max(0, freeShippingThreshold - subtotal);
+
+  if (!mounted) {
+    return (
+      <div className="py-24 max-w-xl mx-auto px-4 text-center">
+        <div className="w-8 h-8 border-2 border-[#E77A42] border-t-transparent rounded-full animate-spin mx-auto mb-3" />
+        <p className="text-xs text-neutral-500 font-medium">Loading your shopping cart...</p>
+      </div>
+    );
+  }
 
   if (cart.length === 0) {
     return (

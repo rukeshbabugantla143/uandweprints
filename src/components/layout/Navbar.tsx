@@ -21,6 +21,11 @@ export function Navbar() {
   const pathname = usePathname();
   const { cartCount } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const navLinks = [
     { label: "Home", href: "/" },
@@ -95,7 +100,7 @@ export function Navbar() {
             >
               <ShoppingBag className="w-4 h-4" />
               <span className="hidden xs:inline">Cart</span>
-              {cartCount > 0 && (
+              {mounted && cartCount > 0 && (
                 <span className="ml-1 px-1.5 py-0.5 rounded-full bg-[#E77A42] group-hover:bg-[#171717] text-white text-[11px] font-bold leading-none animate-in fade-in zoom-in-75 duration-200">
                   {cartCount}
                 </span>
