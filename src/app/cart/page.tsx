@@ -167,7 +167,7 @@ export default function CartPage() {
               {/* Product Thumbnail */}
               <div className="flex items-center gap-4">
                 <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200 shrink-0">
-                  <Image src={item.image} alt={item.name} fill className="object-cover" />
+                  <Image src={item.image} alt={item.name} fill sizes="96px" className="object-cover" />
                 </div>
 
                 <div className="space-y-1">

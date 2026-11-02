@@ -198,7 +198,7 @@ export default function CustomOrderPage() {
                 <div className="border border-emerald-200 bg-emerald-50/50 rounded-2xl p-4 flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="relative w-14 h-14 rounded-xl overflow-hidden bg-neutral-200 border border-neutral-300">
-                      <Image src={imagePreview} alt="Uploaded" fill className="object-cover" />
+                      <Image src={imagePreview} alt="Uploaded" fill sizes="56px" className="object-cover" />
                     </div>
                     <div>
                       <p className="text-xs font-semibold text-neutral-800 truncate max-w-[200px]">

@@ -87,7 +87,13 @@ export default function BulkOrdersPage() {
           <div key={idx} className="double-bezel">
             <div className="double-bezel-inner flex flex-col h-full bg-white overflow-hidden">
               <div className="relative aspect-square w-full bg-neutral-100">
-                <Image src={item.image} alt={item.title} fill className="object-cover" />
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover"
+                />
                 <div className="absolute bottom-2.5 left-2.5">
                   <span className="px-2.5 py-0.5 rounded-full bg-[#171717]/90 backdrop-blur-md text-white text-[10px] font-bold">
                     {item.price}

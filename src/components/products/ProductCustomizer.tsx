@@ -154,6 +154,7 @@ export function ProductCustomizer({ product }: ProductCustomizerProps) {
                     src={customValues.uploadedImagePreview}
                     alt="Your Upload"
                     fill
+                    sizes="48px"
                     className="object-cover"
                   />
                 </div>
@@ -197,7 +198,7 @@ export function ProductCustomizer({ product }: ProductCustomizerProps) {
                     : "border-transparent opacity-70 hover:opacity-100"
                 }`}
               >
-                <Image src={img} alt="" fill className="object-cover" />
+                <Image src={img} alt="" fill sizes="80px" className="object-cover" />
               </button>
             ))}
           </div>
@@ -292,6 +293,7 @@ export function ProductCustomizer({ product }: ProductCustomizerProps) {
                             src={customValues.uploadedImagePreview}
                             alt="Uploaded"
                             fill
+                            sizes="48px"
                             className="object-cover"
                           />
                         </div>

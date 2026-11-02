@@ -100,6 +100,7 @@ export default function AboutPage() {
               src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=900&auto=format&fit=crop"
               alt="U and We Prints Studio Craftsmanship"
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />
           </div>

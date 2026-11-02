@@ -501,7 +501,7 @@ export default function AdminPage() {
                 className="p-4 rounded-2xl border border-neutral-200 flex items-center gap-4 bg-white"
               >
                 <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-neutral-100 shrink-0">
-                  <Image src={prod.images[0]} alt={prod.name} fill className="object-cover" />
+                  <Image src={prod.images[0]} alt={prod.name} fill sizes="64px" className="object-cover" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#E77A42]">
