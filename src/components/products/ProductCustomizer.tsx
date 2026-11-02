@@ -18,6 +18,7 @@ import {
   Info,
   X,
 } from "lucide-react";
+import { LiveProductMockup } from "@/components/products/LiveProductMockup";
 
 interface ProductCustomizerProps {
   product: Product;
@@ -134,56 +135,12 @@ export function ProductCustomizer({ product }: ProductCustomizerProps) {
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
       {/* Left Column: Product Gallery & Live Customization Preview */}
       <div className="lg:col-span-6 space-y-4">
-        {/* Main Image Showcase inside Double-Bezel */}
-        <div className="double-bezel">
-          <div className="double-bezel-inner relative aspect-square w-full overflow-hidden bg-neutral-100">
-            <Image
-              src={product.images[activeImageIndex] || product.images[0]}
-              alt={product.name}
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
-
-            {/* Live Uploaded Image Preview Overlay on Top Right if customer uploaded photo */}
-            {customValues.uploadedImagePreview && (
-              <div className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-md p-2 rounded-2xl shadow-xl border border-neutral-200 flex items-center gap-2 max-w-[200px] animate-in zoom-in-95">
-                <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-neutral-100 border border-neutral-200 shrink-0">
-                  <Image
-                    src={customValues.uploadedImagePreview}
-                    alt="Your Upload"
-                    fill
-                    sizes="48px"
-                    className="object-cover"
-                  />
-                </div>
-                <div className="text-[11px] leading-tight">
-                  <span className="font-bold text-neutral-800 block">Your Photo</span>
-                  <span className="text-[10px] text-emerald-600 font-semibold flex items-center gap-0.5">
-                    <Check className="w-3 h-3" /> Attached
-                  </span>
-                </div>
-              </div>
-            )}
-
-            {/* Badges */}
-            <div className="absolute top-4 left-4 flex flex-col gap-1.5 z-10">
-              {product.bestSeller && (
-                <span className="px-3 py-1 rounded-full bg-[#171717]/90 backdrop-blur-md text-[#FAF7F2] text-xs font-bold uppercase tracking-wider shadow-sm flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-[#E77A42]" />
-                  Best Seller
-                </span>
-              )}
-              {product.turnaroundTime && (
-                <span className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-neutral-800 text-xs font-medium shadow-xs flex items-center gap-1">
-                  <Clock className="w-3.5 h-3.5 text-[#E77A42]" />
-                  {product.turnaroundTime}
-                </span>
-              )}
-            </div>
-          </div>
-        </div>
+        <LiveProductMockup
+          product={product}
+          selectedOptions={selectedOptions}
+          customValues={customValues}
+          activeImageIndex={activeImageIndex}
+        />
 
         {/* Thumbnail Selector */}
         {product.images.length > 1 && (
