@@ -102,3 +102,4 @@ export function generatePrintingQuoteWhatsApp({
 
   return `https://wa.me/${BUSINESS_INFO.cleanPhone}?text=${encodeURIComponent(text)}`;
 }
+

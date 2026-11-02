@@ -10,3 +10,4 @@ export const metadata: Metadata = {
 export default function ShopPage() {
   return <ProductCatalog initialCategory="all" title="Shop All Creations" />;
 }
+

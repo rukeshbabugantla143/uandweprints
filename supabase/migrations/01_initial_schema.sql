@@ -122,3 +122,4 @@ create policy "Users can view their own orders" on public.orders for select usin
 create policy "Anyone can insert an order" on public.orders for insert with check (true);
 create policy "Anyone can insert order items" on public.order_items for insert with check (true);
 create policy "Anyone can insert printing enquiries" on public.printing_enquiries for insert with check (true);
+

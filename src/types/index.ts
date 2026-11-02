@@ -115,3 +115,4 @@ export interface OrderDetails {
   paymentStatus: "paid" | "pending";
   orderStatus: "Confirmed" | "Design Review" | "In Production" | "Shipped" | "Delivered";
 }
+
